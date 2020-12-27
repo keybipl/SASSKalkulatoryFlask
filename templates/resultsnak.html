@@ -1,4 +1,17 @@
+{% if powiatl or powiatw or powiatz %}
+
+<p>W poniższej tabeli podano minimalne wymagane nakłady inwestycyjne dla danej gminy, w zależności od wielkości
+    przedsiebiorcy, po spełnieniu których można wnioskować o decyzję o wsparciu. </p>
+<p><strong>B+R/BPO</strong> oznacza działalnośc badawczo-rozwojową i/lub nowoczesnych usług dla biznesu zgodnie z
+    paragrafem 4, punktem 4, podpunktem 1 Rozporządzenia Rady Ministrów z dnia 28 sierpnia 2018 r. w sprawie pomocy
+    publicznej udzielanej niektórym przedsiębiorcom na realizację nowych inwestycji (Dz.U. 2018 poz. 1713). <a
+        href="http://kssse.pl/upload/pictures/rozporzadzenie-ke-ue-nr-6512014-z-dnia-17-czerwca-2014.pdf"
+        target="_blank">LINK</a></p>
+
+{% endif %}
+
 {% if powiatl %}
+
 <p class="powiat">Powiat: <strong>{{ powiatl }}</strong></p>
 
 <table class="headlines">
@@ -46,6 +59,7 @@
 {% endif %}
 
 {% if powiatw %}
+
 <p class="powiat">Powiat: <strong>{{ powiatw }}</strong></p>
 
 <table class="headlines">
@@ -56,7 +70,7 @@
         <th scope="col">Średni</th>
         <th scope="col">Mały</th>
         <th scope="col">Mikro</th>
-        <th scope="col">B+R i lub BPO</th>
+        <th scope="col">B+R/BPO</th>
     </tr>
 
 </table>
@@ -105,7 +119,7 @@
         <th scope="col">Średni</th>
         <th scope="col">Mały</th>
         <th scope="col">Mikro</th>
-        <th scope="col">B+R i lub BPO</th>
+        <th scope="col">B+R/BPO</th>
     </tr>
 </table>
 

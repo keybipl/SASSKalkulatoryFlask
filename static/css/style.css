@@ -624,7 +624,9 @@ main div.nakwrap form button:hover {
 }
 
 main div.nakwrap div.nakres p {
-  text-align: center;
+  text-align: justify;
+  line-height: 140%;
+  padding: 5px;
 }
 
 main div.nakwrap div.nakres p strong {
@@ -633,6 +635,7 @@ main div.nakwrap div.nakres p strong {
 
 main div.nakwrap div.nakres p.powiat {
   margin-top: 40px;
+  text-align: center;
 }
 
 main div.nakwrap div.nakres table.headlines {
@@ -675,13 +678,13 @@ main div.nakwrap div.nakres table.table tr td.gmina {
 @media (min-width: 640px) {
   main div.nakwrap div.nakres table.headlines {
     margin: 0 auto;
-    width: 90%;
-    font-size: 18px;
+    width: 100%;
+    font-size: 16px;
   }
   main div.nakwrap div.nakres table.table {
     margin: 0 auto;
-    width: 90%;
-    font-size: 18px;
+    width: 100%;
+    font-size: 16px;
   }
   main div.nakwrap div.nakres table.table tr td span {
     display: inline;
@@ -708,6 +711,12 @@ main div.nakwrap div.nakres table.table tr td.gmina {
   }
   main div.nakwrap form div.form-group {
     width: 33%;
+  }
+  main div.nakwrap div.nakres table.headlines {
+    font-size: 18px;
+  }
+  main div.nakwrap div.nakres table.table {
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=style.css.map */
