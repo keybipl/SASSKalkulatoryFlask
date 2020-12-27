@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="video">
+  <video class="header" src="{{ url_for('static', filename='images/movie.mp4') }}" autoplay loop playsinline
+    muted></video>
+  <p>Obliczanie maksymalnej wysokości wsparcia</p>
+</div>
+</header>
+
+<main>
+
+  <div class="rpp">
+
+    <h2>Parametry:</h2>
+    <ul>
+      <li>Wartość inwestycji: <strong>{{ wynik.value }} {{ wynik.waluta }}{{ pp }} </strong></li>
+      <li>Województwo: <strong>{{ wynik.region }}</strong></li>
+      <li>Wielkość przedsiębiorstwa: <strong>{{ wynik.size }}</strong></li>
+    </ul>
+
+    <p>Przedsiębiorca, na terenie województwa {{ wynik.region }}go, w
+      Kostrzyńsko-Słubickiej Specjalnej Strefy Ekonomicznej S.A. może uzyskać maksymalną pomoc w wysokości:</p>
+
+    <h3 class="ppvalue"><i class='fas fa-thumbs-up'></i> {{ wynik.pp }} {{ wynik.waluta }}</h3>
+
+    <p>co daje <strong>{{ przelicznik }} {{ currency }}</strong> według kursu EURO Narodowego Banku Polskiego
+      <strong>{{ cena }}</strong> zł z dnia <strong>{{ date[8:10] }}.{{ date[5:7] }}.{{ date[0:4] }}</strong> roku.</p>
+
+    {% if notification %}
+
+    <p class="notification">UWAGA! Przy podanej wartośći inwestycji projekt wymaga
+      notyfikacji Komisji Europejskiej.</p>
+
+    {% endif %}
+
+
+
+    {% if not result %}
+
+    <p class="nosupport">Niestety przy podanych parametrach wsparcie nie jest możliwe
+      w żadnej z gmin na terenie województwa {{ wynik.region }}go.</p>
+    {% else %}
+
+
+    <p>Przy zakładanym poziomie inwestycji uzyskanie wsparcia w ramach Polskiej Strefy Inwestycji na terenie województwa
+      {{ wynik.region }}go mozliwe jest w następujących
+      lokalizacjach <strong>(w tabeli poniżej nazwa gminy oraz minimalne wymagane nakłady)</strong>:</p>
+
+    {% for k,v in result.items() %}
+
+    <p class="powiat">Powiat <strong>{{ k }}</strong> w gminach:</p>
+
+    <table class="headlines">
+
+      <tr>
+        <th class="gmina" scope="col">Gmina</th>
+        <th class="pln" scope="col">PLN</th>
+        <th class="euro" scope="col">EURO</th>
+      </tr>
+
+    </table>
+
+    {% for i in v %}
+    <table class="table">
+      <tr>
+        <td class="gmina">{{ i }}</td>
+        <td class="pln">{{ '{:,}'.format(dicn[i]).replace(',', ' ') }} zł</td>
+        <td class="euro">
+          {% set test = dicn[i]/cena | float %}
+          {% set test2 = (test | string) [:-2] %} {{ '{0:,}'.format(test2|int).replace(',', ' ') }} &euro;
+        </td>
+      </tr>
+    </table>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+</main>
+{% endblock %}

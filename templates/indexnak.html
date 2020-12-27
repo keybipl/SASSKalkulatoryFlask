@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Polska Strefa Inwestycji - kalkulatory
+{% endblock %}
+
+{% block content %}
+
+<div class="video">
+    <video class="header" src="{{ url_for('static', filename='images/movie.mp4') }}" autoplay loop playsinline
+        muted></video>
+    <p>Obliczanie maksymalnej wysokości wsparcia</p>
+</div>
+</header>
+
+<main>
+    <div class="nakwrap">
+
+        <h2>Proszę wybrać powiat a wyświetlone zostaną minimalne wymagane nakłady
+            inwestycyjne, które uprawniają do ubiegania się o decyzję o wsparciu.</h2>
+
+        <form action="/naklady" method="POST">
+
+            <div class="form-group">
+                <label for="lubuskie">lubuskie</label>
+                <select name="powiatl" id="lubuskie">
+                    <option></option>
+                    {% for powiat in lubuskie_powiaty %}
+                    <option>{{ powiat.powiat }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="wielkopolskie">wielkopolskie</label>
+                <select name="powiatw" id="wielkopolskie">
+                    <option></option>
+                    {% for powiat in wielkopolskie_powiaty %}
+                    <option>{{ powiat.powiat }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="zachodniopomorskie">zachodniopomorskie</label>
+                <select name="powiatz" id="zachodniopomorskie">
+                    <option></option>
+                    {% for powiat in zachodniopomorskie_powiaty %}
+                    <option>{{ powiat.powiat }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" class="ppcount">Pokaż</button>
+
+
+        </form>
+
+        <div class="nakres">
+            {% if request.method == 'POST' %}
+            {% if gminyl or gminyw or gminyz %}
+            {% include 'resultsnak.html' %}
+            {% else %}
+            <p>Nie wybrano powiatu</p>
+            {% endif %}
+            {% endif %}
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

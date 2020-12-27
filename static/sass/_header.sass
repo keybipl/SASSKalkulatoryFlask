@@ -1,0 +1,67 @@
+header
+  font-family: 'Open Sans', sans-serif
+  margin-top: 5px
+  div.wrap
+    margin: 0 auto
+    max-width: 1366px
+    width: 100%
+    +box-flex(column, space-around)
+    div.logo
+      text-align: center
+      img
+        width: 90%
+    div.logo:nth-child(1)
+      display: none
+    div.logo:nth-child(3)
+      display: none
+  div.video
+    height: 280px
+    overflow: hidden
+    position: relative
+    margin: 0 auto
+    margin-top: 20px
+    margin-bottom: 30px
+    width: 100%
+    min-width: 320px
+    video.header
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      min-width: 100%
+      min-height: 100%
+      z-index: -1
+      opacity: 0.8
+    p
+      background-color: rgba(255, 255, 255, 0.6)
+      position: absolute
+      bottom: 0
+      width: 100%
+      text-align: center
+      padding: 5px
+      font-size: 18px
+      font-weight: bold
+      letter-spacing: 1px
+      text-transform: uppercase
+
+@media (min-width: $tablet)
+  header
+    div.wrap
+      +box-flex(row, space-around)
+      div.logo
+        img
+          height: 70px
+          width: auto
+      div.logo:nth-child(1)
+        display: block
+      div.logo:nth-child(3)
+        display: block
+    div.video
+      height: 320px
+
+@media (min-width: $desktop)
+  header
+    div.video
+      height: 520px
+      p
+        font-size: 24px

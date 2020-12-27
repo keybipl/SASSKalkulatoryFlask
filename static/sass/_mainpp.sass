@@ -1,0 +1,158 @@
+main
+  div.ppwrap
+    div.form
+      form
+        text-align: center
+        div.form-group
+          text-align: center
+          label
+            display: block
+            font-weight: bold
+            margin-top: 30px
+            margin-bottom: 10px
+          select
+            height: 50px
+            width: 250px
+            option
+              font-size: 18px
+          input
+            font-size: 18px
+            height: 50px
+            width: 250px
+            text-align: center
+        button
+          +buttonMobile()
+          margin-top: 25px
+    div.description
+      line-height: 150%
+      text-align: justify
+      padding: 10px
+      div.img
+        text-align: center
+        img
+          width: 300px
+          text-align: center
+      div.imgmsp
+        text-align: center
+        img
+          width: 100%
+          max-width: 768px
+  div.rpp
+    h2
+      text-align: center
+    p
+      line-height: 140%
+      text-align: justify
+      padding: 0 5px
+    ul
+      li
+        margin: 10px 0
+    h3
+      text-align: center
+      font-size: 22px
+    p.powiat
+      text-align: center
+      margin-top: 40px
+      strong
+        text-transform: uppercase
+    table.headlines
+      width: 100%
+      tr
+        th.gmina
+          text-align: left
+          width: 60%
+          text-transform: uppercase
+        th.pln
+          text-align: center
+          width: 40%
+          text-transform: uppercase
+        th.euro
+          display: none
+    table.table
+      width: 100%
+      tr
+        &:hover
+          background-color: #f5f5f5
+        td
+          padding: 5px 0
+        td.gmina
+          text-align: left
+          width: 60%
+        td.pln
+          text-align: center
+          width: 40%
+        td.euro
+          display: none
+
+@media (min-width: 640px)
+  main
+    div.rpp
+      table.headlines
+        margin: 0 auto
+        max-width: 768px
+        tr
+          th.gmina
+            width: 40%
+          th.pln
+            width: 30%
+          th.euro
+            display: table-cell
+            width: 30%
+            text-align: center
+      table.table
+        margin: 0 auto
+        max-width: 768px
+        tr
+          td.gmina
+            width: 40%
+          td.pln
+            width: 30%
+          td.euro
+            display: table-cell
+            width: 30%
+            text-align: center
+
+@media (min-width: 1024px)
+  main
+    div.ppwrap
+      +box-flex(row, space-between)
+      div.form
+        width: 30%
+        form
+          div.form-group
+            label
+            select
+              option
+            input
+          button
+      div.description
+        width: 70%
+        div.img
+          img
+            width: 80%
+        div.imgmsp
+          img
+    div.rpp
+      table.headlines
+        width: 60%
+      table.table
+        width: 60%
+
+@media (min-width: $desktop)
+  main
+    div.ppwrap
+      div.form
+        form
+          div.form-group
+            label
+            select
+              option
+            input
+          button
+      div.description
+        div.img
+          img
+            width: 50%
+            max-width: 768px
+        div.imgmsp
+          img

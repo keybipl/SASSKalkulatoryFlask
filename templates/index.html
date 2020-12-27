@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Polska Strefa Inwestycji - kalkulatory
+{% endblock %}
+
+{% block content %}
+
+
+<div class="video">
+    <video class="header" src="{{ url_for('static', filename='images/movie.mp4') }}" autoplay loop playsinline
+        muted></video>
+    <p>Kalkulatory wsparcia</p>
+</div>
+</header>
+<main>
+    <div class="tileswrap">
+        <div class="tile">
+            <i class="fas fa-comments-dollar"></i>
+            <h2>wsparcie</h2>
+            <p>Oblicza maksymalną wysokość wsparcia.</p>
+            <a href="/pomoc"></a>
+        </div>
+        <div class="tile">
+            <i class="fas fa-search-location"></i>
+            <h2>lokalizacje</h2>
+            <p>Wyszukuje gminy, w których możliwe jest wsparcie.</p>
+            <a href="/lokalizacje"></a>
+        </div>
+        <div class="tile"><i class="fas fa-money-bill-wave"></i>
+            <h2>nakłady</h2>
+            <p>Pokazuje minimalną wartość inwestycji w wybranych powiatach.</p>
+            <a href="/naklady"></a>
+        </div>
+        <div class="tile"><i class="fas fa-handshake"></i>
+            <h2>opłata</h2>
+            <p>Oblicza opłatę do zarządzającego obszarem.</p>
+            <a href="/oplata"></a>
+        </div>
+    </div>
+    <div class="specialist"></div>
+</main>
+
+
+{% endblock %}

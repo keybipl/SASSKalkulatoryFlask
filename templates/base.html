@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Polska Strefa Inwestycji – Kalkulatory</title>
+    <meta name="description" content="Kalkulatory związane z pomocą publiczną w ramach Polskiej Strefy Inwestycji w Kostrzyńsko-Słubickiej
+          Specjalnej Strefie Ekonomicznej S.A. Pomagają obliczyć maksymalną możliwą pomoc publiczną, minimalne nakłady,
+          pokazują minimalne wymagane nakłady w poszczególnych gminach oraz wyliczają opłatę za administrowanie w ramach
+           specjalnej strefy ekonomicznej.">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <div class="logo"><a href="/"> <img src="{{ url_for('static', filename='images/psi.png') }}"
+                        alt="Polska Strefa Inwestycji"></a> </div>
+            <div class="logo"><a href="/"> <img src="{{ url_for('static', filename='images/strefalogo.png') }}"
+                        alt="Kostrzyńsko-Słubicka Specjalna Strefa Ekonomiczna S.A."></a>
+            </div>
+            <div class="logo"><a href="/"><img src="{{ url_for('static', filename='images/Invest_in_the_west.png') }}"
+                        alt="Invest in the West"> </a> </div>
+        </div>
+
+        {% block content %}{% endblock %}
+
+
+        <footer>
+            <div class="specialist">
+                <p>kontakt ze specjalistą</p>
+            </div>
+            <div class="contactwrap">
+                <div class="contact">
+                    <div class="image"><img src="{{ url_for('static', filename='images/kail.jpg') }}"
+                            alt="Andrzej Kail">
+                    </div>
+                    <div class="description">
+                        <h3>Andrzej Kail</h3>
+                        <h4>Dyrektor Marketingu</h4>
+                        <p class="phone">tel. 95 721 98 03</p>
+                        <p class="mobile">kom. 601 27 84 64</p>
+                        <p class="mail"><a href="mailto:kail@kssse.pl">kail@kssse.pl</a></p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="image"><img src="{{ url_for('static', filename='images/ja.jpg') }}"
+                            alt="Krzysztof Babij">
+                    </div>
+                    <div class="description">
+                        <h3>Krzysztof Babij</h3>
+                        <h4>Główny specjalista</h4>
+                        <p class="phone">tel. 95 721 98 03</p>
+                        <p class="mobile">kom. 601 27 84 64</p>
+                        <p class="mail"><a href="mailto:babij@kssse.pl">babij@kssse.pl</a></p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="image"><img src="{{ url_for('static', filename='images/borowski.jpg') }}"
+                            alt="Maciej Borowski">
+                    </div>
+                    <div class="description">
+                        <h3>Maciej Borowski</h3>
+                        <h4>Główny specjalista</h4>
+                        <p class="phone">tel. 95 721 98 03</p>
+                        <p class="mobile">kom. 601 27 84 64</p>
+                        <p class="mail"><a href="mailto:borowski@kssse.pl">borowski@kssse.pl</a></p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="image"><img src="{{ url_for('static', filename='images/aga.jpg') }}"
+                            alt="Agnieszka Matuła-Dziduch"></div>
+                    <div class="description">
+                        <h3>Agnieszka Matuła-Dziduch</h3>
+                        <h4>Główny specjalista</h4>
+                        <p class="phone">tel. 95 721 98 03</p>
+                        <p class="mobile">kom. 601 27 84 64</p>
+                        <p class="mail"><a href="mailto:matula-dziduch@kssse.pl">matula-dziduch@kssse.pl</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="map">
+                <p>nasza siedziba</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.540359652451!2d14.637827415810332!3d52.59600297982869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470773097f4d1585%3A0xdbed192f742832e3!2sKostrzy%C5%84sko%20-%20S%C5%82ubicka%20Specjalna%20Strefa%20Ekonomiczna%20S.A.!5e0!3m2!1spl!2spl!4v1608297617951!5m2!1spl!2spl"
+                    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+
+            <div class="footer">
+                <p><strong>&copy;</strong><a href="http://kssse.pl" target="_blank">Kostrzyńsko-Słubicka Specjalna
+                        Strefa
+                        Ekonomiczna S.A.</a>
+                </p>
+            </div>
+
+        </footer>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</body>
+
+</html>
