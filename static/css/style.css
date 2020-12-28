@@ -719,4 +719,268 @@ main div.nakwrap div.nakres table.table tr td.gmina {
     font-size: 18px;
   }
 }
+
+main div.lwrap {
+  margin: 0 auto;
+  max-width: 1366px;
+  padding: 10px;
+}
+
+main div.lwrap h2 {
+  font-size: 18px;
+  text-align: center;
+}
+
+main div.lwrap p {
+  text-align: justify;
+  line-height: 140%;
+  padding: 5px;
+}
+
+main div.lwrap form {
+  text-align: center;
+}
+
+main div.lwrap form div.forms div.form {
+  text-align: center;
+}
+
+main div.lwrap form div.forms div.form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+main div.lwrap form div.forms div.form select {
+  height: 50px;
+  width: 250px;
+}
+
+main div.lwrap form div.forms div.form option {
+  font-size: 18px;
+}
+
+main div.lwrap form div.forms div.form input {
+  height: 50px;
+  width: 250px;
+  font-size: 18px;
+}
+
+main div.lwrap form div.forms button {
+  width: 100px;
+  height: 44px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 16px;
+  font-family: 'Roboto', arial, sans-serif;
+  border-radius: 20px;
+  background-color: #00315D;
+  -webkit-box-shadow: 2px 8px 8px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 8px 8px 0px rgba(0, 0, 0, 0.5);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+main div.lwrap form div.forms button:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main div.lwrap form div.frd {
+  margin-top: 30px;
+}
+
+main div.lwrap form div.frd div.radiowrap {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+main div.lwrap form button.ppcount {
+  width: 100px;
+  height: 44px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 16px;
+  font-family: 'Roboto', arial, sans-serif;
+  border-radius: 20px;
+  background-color: #00315D;
+  -webkit-box-shadow: 2px 8px 8px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 8px 8px 0px rgba(0, 0, 0, 0.5);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+main div.lwrap form button.ppcount:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main div.lwrap ul li {
+  margin: 10px 0;
+  line-height: 130%;
+}
+
+main div.lwrap div.img {
+  text-align: center;
+}
+
+main div.lwrap div.img img {
+  width: 90%;
+  max-width: 768px;
+}
+
+main div.rlok {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1366px;
+  padding: 10px;
+}
+
+main div.rlok button {
+  width: 100px;
+  height: 44px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 16px;
+  font-family: 'Roboto', arial, sans-serif;
+  border-radius: 20px;
+  background-color: #00315D;
+  -webkit-box-shadow: 2px 8px 8px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 8px 8px 0px rgba(0, 0, 0, 0.5);
+  margin-top: 5px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+main div.rlok button:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main div.rlok p {
+  text-align: justify;
+  line-height: 140%;
+  padding: 5px;
+}
+
+main div.rlok p.par {
+  text-align: center;
+  line-height: 100%;
+  margin: 0;
+}
+
+main div.rlok p.put {
+  text-align: center;
+  line-height: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+main div.rlok div.list h2.woj {
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+main div.rlok div.list p.powiaty {
+  border-top: 1px solid #ddd;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+main div.rlok div.list p.powiaty strong {
+  text-transform: uppercase;
+}
+
+main div.rlok div.list table {
+  max-width: 768px;
+}
+
+main div.rlok div.list table tr td {
+  padding: 5px 0;
+}
+
+main div.rlok div.list table.headlines {
+  margin: 0 auto;
+  width: 100%;
+}
+
+main div.rlok div.list table.headlines tr th.gmina {
+  width: 33%;
+  text-align: left;
+}
+
+main div.rlok div.list table.headlines tr th.pln {
+  width: 33%;
+}
+
+main div.rlok div.list table.headlines tr th.euro {
+  width: 33%;
+}
+
+main div.rlok div.list table.table {
+  margin: 0 auto;
+  width: 100%;
+}
+
+main div.rlok div.list table.table tr:hover {
+  background-color: #f5f5f5;
+}
+
+main div.rlok div.list table.table tr td.gmina {
+  width: 33%;
+  text-align: left;
+}
+
+main div.rlok div.list table.table tr td.pln {
+  width: 33%;
+}
+
+main div.rlok div.list table.table tr td.euro {
+  width: 33%;
+}
+
+@media (min-width: 1024px) {
+  main div.lwrap {
+    margin: 0 auto;
+    max-width: 1366px;
+  }
+  main div.lwrap form div.forms {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main div.lwrap form div.forms div.form {
+    width: 33%;
+  }
+}
+
+@media (min-width: 1366px) {
+  main div.lwrap div.img img {
+    width: 50%;
+  }
+}
 /*# sourceMappingURL=style.css.map */

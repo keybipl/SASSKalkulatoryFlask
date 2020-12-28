@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Polska Strefa Inwestycji - kalkulatory
+{% endblock %}
+
+{% block content %}
+
+<div class="video">
+  <video class="header" src="{{ url_for('static', filename='images/movie.mp4') }}" autoplay loop playsinline
+    muted></video>
+  <p>Wyszukiwanie gmin ze wsparciem</p>
+</div>
+</header>
+
+<main>
+
+  <div class="rlok">
+    <h2><strong>Podane parametry:</strong></h2>
+
+    <p class="par">Koszty kwalifikowane:</p>
+    <p class="put"><strong>{{  value }} {{ currency }}</strong></p>
+
+    <p class="par">Wielkość przedsiębiorcy:</p>
+    <p class="put"><strong>{{ size }}</strong></p>
+
+    <p class="par"><strong>TYLKO</strong> działalność B+R i/lub BPO:</p>
+    <p class="put">{% if rd == 'option1' %} <strong>TAK</strong>
+      {% else %}
+      <strong>NIE</strong>
+      {% endif %}
+    </p>
+    <a href="/lokalizacje"><button>Zmień</button></a>
+
+
+    <div class="list">
+      <h2>Lokalizacje spełniające kryteria:</h2>
+
+      <div id="lubuskie" class="lubuskie">
+        <h2 class="woj">Lubuskie</h2>
+        {% for k,v in result.items() %}
+        <p class="powiaty">Powiat <strong>{{ k }}</strong> w gminach:</p>
+
+        <table class="headlines">
+          <tr>
+            <th class="gmina" scope="col">Gmina</th>
+            <th class="pln" scope="col">PLN</th>
+            <th class="euro">EURO</th>
+          </tr>
+        </table>
+        {% for i in v %}
+        <table class="table">
+          <tr>
+            <td class="gmina">{{ i }}</td>
+            <td class="pln">{{ '{:,}'.format(lub[i]).replace(',', ' ') }} zł</td>
+            <td class="euro">
+              {% set test = lub[i]/cena | float %}
+              {% set test2 = (test | string) [:-2] %} {{ '{0:,}'.format(test2|int).replace(',', ' ') }} &euro;
+            </td>
+          </tr>
+        </table>
+        {% endfor %}
+        {% endfor %}
+      </div>
+
+      <div class="wielkopolskie">
+        <h2 class="woj">Wielkopolskie</h2>
+        {% for k,v in resultw.items() %}
+        <p class="powiaty">Powiat <strong>{{ k }}</strong> w gminach:</p>
+        <table class="headlines">
+          <tr>
+            <th class="gmina" scope="col">Gmina</th>
+            <th class="pln" scope="col">PLN</th>
+            <th class="euro">EURO</th>
+          </tr>
+        </table>
+        {% for i in v %}
+        <table class="table">
+          <tr>
+            <td class="gmina">{{ i }}</td>
+            <td class="pln">{{ '{:,}'.format(wlkp[i]).replace(',', ' ') }} zł</td>
+            <td class="euro">
+              {% set test = wlkp[i]/cena | float %}
+              {% set test2 = (test | string) [:-2] %} {{ '{0:,}'.format(test2|int).replace(',', ' ') }} &euro;
+            </td>
+          </tr>
+        </table>
+        {% endfor %}
+        {% endfor %}
+      </div>
+
+      <div id="zachodniopomorskie" class="zachodniopomorskie">
+
+        <h2 class="woj">Zachodniopomorskie</h2>
+        {% for k,v in resultz.items() %}
+        <p class="powiaty">Powiat <strong>{{ k }}</strong> w gminach:</p>
+        <table class="headlines">
+          <tr>
+            <th class="gmina" scope="col">Gmina</th>
+            <th class="pln" scope="col">PLN</th>
+            <th class="euro">EURO</th>
+          </tr>
+        </table>
+        {% for i in v %}
+        <table class="table">
+          <tr>
+            <td class="gmina">{{ i }}</td>
+            <td class="pln">{{ '{:,}'.format(zach[i]).replace(',', ' ') }} zł</td>
+            <td class="euro">
+              {% set test = zach[i]/cena | float %}
+              {% set test2 = (test | string) [:-2] %} {{ '{0:,}'.format(test2|int).replace(',', ' ') }} &euro;
+            </td>
+          </tr>
+        </table>
+        {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

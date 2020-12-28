@@ -1,0 +1,147 @@
+main
+  div.lwrap
+    margin: 0 auto
+    max-width: 1366px
+    padding: 10px
+    h2
+      font-size: 18px
+      text-align: center
+    p
+      text-align: justify
+      line-height: 140%
+      padding: 5px
+    form
+      text-align: center
+      div.forms
+        div.form
+          text-align: center
+          label
+            display: block
+            font-weight: bold
+            margin-top: 30px
+            margin-bottom: 10px
+          select
+            height: 50px
+            width: 250px
+          option
+            font-size: 18px
+          input
+            height: 50px
+            width: 250px
+            font-size: 18px
+        button
+          +buttonMobile()
+          margin-top: 25px
+          margin-bottom: 25px
+          cursor: pointer
+          transition: .3s
+          &:hover
+            box-shadow: none
+      div.frd
+        margin-top: 30px
+        div.radiowrap
+          margin-top: 10px
+          margin-bottom: 10px
+      button.ppcount
+        +buttonMobile()
+        margin-top: 25px
+        margin-bottom: 25px
+        cursor: pointer
+        transition: .3s
+        &:hover
+          box-shadow: none
+    ul
+      li
+        margin: 10px 0
+        line-height: 130%
+        text-align:
+    div.img
+      text-align: center
+      img
+        width: 90%
+        max-width: 768px
+  div.rlok
+    text-align: center
+    margin: 0 auto
+    max-width: 1366px
+    padding: 10px
+    button
+      +buttonMobile()
+      margin-top: 5px
+      margin-bottom: 25px
+      cursor: pointer
+      transition: .3s
+      &:hover
+        box-shadow: none
+    p
+      text-align: justify
+      line-height: 140%
+      padding: 5px
+    p.par
+      text-align: center
+      line-height: 100%
+      margin: 0
+    p.put
+      text-align: center
+      line-height: 100%
+      margin: 0
+      margin-bottom: 20px
+    div.list
+      h2.woj
+        text-transform: uppercase
+        margin-top: 40px
+      p.powiaty
+        border-top: 1px solid #ddd
+        text-align: center
+        margin-top: 20px
+        padding: 20px
+        strong
+          text-transform: uppercase
+      table
+        max-width: 768px
+        tr
+          td
+            padding: 5px 0
+      table.headlines
+        margin: 0 auto
+        width: 100%
+        tr
+          th.gmina
+            width: 33%
+            text-align: left
+          th.pln
+            width: 33%
+          th.euro
+            width: 33%
+      table.table
+        margin: 0 auto
+        width: 100%
+        tr
+          &:hover
+            background-color: #f5f5f5
+          td.gmina
+            width: 33%
+            text-align: left
+          td.pln
+            width: 33%
+          td.euro
+            width: 33%
+
+@media (min-width: 1024px)
+  main
+    div.lwrap
+      margin: 0 auto
+      max-width: 1366px
+      form
+        div.forms
+          +box-flex(row, space-around)
+          flex-wrap: wrap
+          div.form
+            width: 33%
+
+@media (min-width: $desktop)
+  main
+    div.lwrap
+      div.img
+        img
+          width: 50%
