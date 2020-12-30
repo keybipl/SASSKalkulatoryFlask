@@ -354,6 +354,11 @@ footer div.footer p a {
   }
 }
 
+main div.ppwrap {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
 main div.ppwrap div.form form {
   text-align: center;
 }
@@ -423,6 +428,11 @@ main div.ppwrap div.description div.imgmsp {
 main div.ppwrap div.description div.imgmsp img {
   width: 100%;
   max-width: 768px;
+}
+
+main div.rpp {
+  max-width: 1366px;
+  margin: 0 auto;
 }
 
 main div.rpp h2 {
@@ -533,6 +543,9 @@ main div.rpp table.table tr td.euro {
 }
 
 @media (min-width: 1024px) {
+  main {
+    font-size: 21px;
+  }
   main div.ppwrap {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -592,6 +605,7 @@ main div.nakwrap form div.form-group label {
 main div.nakwrap form div.form-group select {
   height: 50px;
   width: 250px;
+  font-size: 18px;
 }
 
 main div.nakwrap form div.form-group select option {
@@ -692,6 +706,9 @@ main div.nakwrap div.nakres table.table tr td.gmina {
 }
 
 @media (min-width: 1024px) {
+  main {
+    font-size: 21px;
+  }
   main div.nakwrap {
     max-width: 1366px;
     margin: 0 auto;
@@ -712,11 +729,14 @@ main div.nakwrap div.nakres table.table tr td.gmina {
   main div.nakwrap form div.form-group {
     width: 33%;
   }
+  main div.nakwrap form div.form-group select {
+    font-size: 21px;
+  }
   main div.nakwrap div.nakres table.headlines {
-    font-size: 18px;
+    font-size: 21px;
   }
   main div.nakwrap div.nakres table.table {
-    font-size: 18px;
+    font-size: 21px;
   }
 }
 
@@ -956,9 +976,15 @@ main div.rlok div.list table.table tr td.euro {
 }
 
 @media (min-width: 1024px) {
+  main {
+    font-size: 21px;
+  }
   main div.lwrap {
     margin: 0 auto;
     max-width: 1366px;
+  }
+  main div.lwrap h2 {
+    font-size: 25px;
   }
   main div.lwrap form div.forms {
     display: -webkit-box;
@@ -975,6 +1001,12 @@ main div.rlok div.list table.table tr td.euro {
   }
   main div.lwrap form div.forms div.form {
     width: 33%;
+  }
+  main div.lwrap form div.forms div.form option {
+    font-size: 21px;
+  }
+  main div.lwrap form div.forms div.form input {
+    font-size: 21px;
   }
 }
 

@@ -129,15 +129,22 @@ main
 
 @media (min-width: 1024px)
   main
+    font-size: 21px
     div.lwrap
       margin: 0 auto
       max-width: 1366px
+      h2
+        font-size: 25px
       form
         div.forms
           +box-flex(row, space-around)
           flex-wrap: wrap
           div.form
             width: 33%
+            option
+              font-size: 21px
+            input
+              font-size: 21px
 
 @media (min-width: $desktop)
   main
