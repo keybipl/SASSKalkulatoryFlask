@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Polska Strefa Inwestycji - kalkulatory
+{% endblock %}
+
+{% block content %}
+
+<div class="video">
+    <video class="header" src="{{ url_for('static', filename='images/movie.mp4') }}" autoplay loop playsinline
+        muted></video>
+    <p>Obliczanie opłaty do Strefy</p>
+</div>
+</header>
+
+<main>
+
+    <div class="roplwrap">
+        <div class="parameters">
+            <p>Koszty kwalifikowane:</p>
+            <p>{{ '{:,}'.format(expenditures).replace(',', ' ') }} {{ currency }}</p>
+            <p>Powierzchnia</p>
+            <p>{{ '{:,}'.format(area).replace(',', ' ') }} m<sup>2</sup></p>
+            <p>Nowe miejsca pracy</p>
+            <p>{{ jobs }}</p>
+            <p>Przedsiębiorca</p>
+            <p>{{ size }}</p>
+            <p>Infrastruktura techniczna</p>
+            <p>{% if infrastructure == 'option1' %}TAK{% else %}NIE{% endif %}</p>
+            <p>Okres obowiązywanie decyzji</p>
+            <p>{{ '{:,}'.format(time).replace(',', ' ') }}</p>
+            <button type="button" input type="submit"><a href="/oplata">Policz jeszcze raz</a></button>
+        </div>
+        <div class="resultsopl">
+
+            <p>Przy podanych parametrach <b>opłata miesięczna</b> dla zarządzającego specjalną strefą
+                ekonomiczną
+                wyniesie:</p>
+
+            <p class="fee"><i class='fas fa-handshake'></i>
+
+                {% set monthly = '{:,.2f}'.format(pay).replace(',', ' ').replace('.', ',') %}
+                {% if monthly[-1] == '0' and monthly[-2] == '0' %}
+                {{ monthly[:-3] }}
+                {% else %}
+                {{ monthly }}
+                {% endif %}
+
+                {{ currency }}</p>
+
+
+            <p>co daje:</p>
+            <ul>
+                <li><strong>
+                        {% set calc = '{:,.2f}'.format(przelicznik).replace(',', ' ').replace('.', ',') %}
+                        {% if calc[-1] == '0' and calc[-2] == '0' %}
+                        {{ calc[:-3] }}
+                        {% else %}
+                        {{ calc }}
+                        {% endif %}</strong>
+
+                    {% if currency == 'EURO' %}
+                    PLN
+                    {% else %}
+                    EURO
+                    {% endif %}</li>
+
+                <li>w skali roku: <strong>
+                        {% set yearly = '{:,.2f}'.format(pay*12).replace(',', ' ').replace('.', ',') %}
+                        {% if yearly[-1] == '0' and yearly[-2] == '0' %}
+                        {{ yearly[:-3] }}
+                        {% else %}
+                        {{ yearly }}
+                        {% endif %}
+                        {{ currency }}</strong>,
+
+                    {% if currency == 'EURO' %}
+                    {% set policz = pay*12 * cena %}
+                    {% else %}
+                    {% set policz = pay*12 / cena %}
+                    {% endif %}
+
+                    czyli <strong>
+                        {% set yearlyp = '{:,.2f}'.format(policz).replace(',', ' ').replace('.', ',') %}
+                        {% if yearlyp[-1] == '0' and yearlyp[-2] == '0' %}
+                        {{ yearlyp[:-3] }}
+                        {% else %}
+                        {{ yearlyp }}
+                        {% endif %}
+                        {% if currency == 'EURO' %}PLN{% else %}EURO{% endif %}</strong></li>
+
+
+                <li>przez cały okres ważności decyzji <strong>
+
+                        {% set all = '{:,.2f}'.format(pay*12*time).replace(',', ' ').replace('.', ',') %}
+                        {% if all[-1] == '0' and all[-2] == '0' %}
+                        {{ all[:-3] }}
+                        {% else %}
+                        {{ all }}
+                        {% endif %}
+                        {{ currency }},
+
+                        {% if currency == 'EURO' %}
+                        {% set policz = pay*12*time * cena %}
+                        {% else %}
+                        {% set policz = pay*12*time / cena %}
+                        {% endif %}
+
+                        czyli
+                        {% set allp = '{:,.2f}'.format(policz).replace(',', ' ').replace('.', ',') %}
+                        {% if allp[-1] == '0' and yearlyp[-2] == '0' %}
+                        {{ allp[:-3] }}
+                        {% else %}
+                        {{ allp }}
+                        {% endif %}
+                        {% if currency == 'EURO' %}PLN{% else %}EURO{% endif %}</strong>
+                </li>
+            </ul>
+
+            <p>Powyższą opłatę policzono na podstawie <a href="http://kssse.pl/upload/REGULAMIN_OPLAT.pdf"
+                    target="_blank">regulaminu świadczenia usług
+                    standardowych na obszarze zarządzanym przez Kostrzyńsko-Słubicką Specjalną Strefę Ekonomiczną.</a>
+            </p>
+
+            <p>Regulamin został zatwierdzony przez Ministerstwo Rozwoju a opłata nie podlega negocjacjom
+                przed podpisaniem umowy o świadczenie usług.</p>
+            <p>Przedsiębiorca zobowiązany jest do podpisania umowy niezwłocznie po
+                uzyskaniu decyzji o wsparciu według artykułu 10 punktu 1 <a
+                    href="http://kssse.pl/upload/pictures/Dz_U_2018_poz_1162.pdf">
+                    ustawy o wspieraniu nowych inwestycji.</a></p>
+
+            <p>Umowa zostanie podpisana w złotówkach. Dane w Euro mają tylko i wyłącznie
+                charakter poglądowy.</p>
+
+            {% if infrastructure == 'option1' %}
+            <p>UWAGA! Warunki korzystania z infrastruktury technicznej
+                podlegają odrębnym uzgodnieniom.</p>
+            {% endif %}
+
+
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,75 @@
+main
+  div.feewrap
+    div.fee
+      form
+        text-align: center
+        button
+          +buttonMobile()
+          margin-top: 25px
+          margin-bottom: 25px
+          cursor: pointer
+          transition: .3s
+          &:hover
+            box-shadow: none
+        div.form-group
+          margin-bottom: 25px
+          label
+            display: block
+            font-weight: bold
+            font-size: 18px
+            margin-bottom: 8px
+          select
+            width: 250px
+            height: 50px
+            font-size: 18px
+          input
+            width: 250px
+            height: 50px
+            font-size: 18px
+            text-align: center
+          div.radiowrap
+            label
+              display: inline
+              font-weight: 400
+              margin-right: 8px
+            input
+              width: 25px
+              height: 25px
+    div.feeDescription
+      padding: 0 5px
+      p
+        line-height: 140%
+        text-align: justify
+        margin: 0
+        margin-bottom: 15px
+      ul
+        li
+          margin: 10px 0
+          line-height: 130%
+      div.img
+        width: 100%
+        text-align: center
+        img
+          width: 100%
+          max-width: 768px
+  div.roplwrap
+    div.parameters
+      text-align: center
+      p
+        margin: 0
+        line-height: 140%
+        &:nth-child(odd)
+          margin-top: 20px
+          font-weight: bold
+    div.resultsopl
+
+@media (min-width:  1024px)
+  main
+    max-width: 1366px
+    margin: 0 auto
+    div.feewrap
+      +box-flex(row, space-around)
+      div.fee
+        width: 30%
+      div.feeDescription
+        width: 60%
