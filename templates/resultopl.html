@@ -29,7 +29,7 @@ Polska Strefa Inwestycji - kalkulatory
             <p>{% if infrastructure == 'option1' %}TAK{% else %}NIE{% endif %}</p>
             <p>Okres obowiązywanie decyzji</p>
             <p>{{ '{:,}'.format(time).replace(',', ' ') }}</p>
-            <button type="button" input type="submit"><a href="/oplata">Policz jeszcze raz</a></button>
+            <a href="/oplata"><button type="button" input type="submit">Zmień</button></a>
         </div>
         <div class="resultsopl">
 
@@ -122,8 +122,7 @@ Polska Strefa Inwestycji - kalkulatory
                     standardowych na obszarze zarządzanym przez Kostrzyńsko-Słubicką Specjalną Strefę Ekonomiczną.</a>
             </p>
 
-            <p>Regulamin został zatwierdzony przez Ministerstwo Rozwoju a opłata nie podlega negocjacjom
-                przed podpisaniem umowy o świadczenie usług.</p>
+            <p>Regulamin został zatwierdzony przez Ministerstwo Rozwoju a opłata nie podlega negocjacjom.</p>
             <p>Przedsiębiorca zobowiązany jest do podpisania umowy niezwłocznie po
                 uzyskaniu decyzji o wsparciu według artykułu 10 punktu 1 <a
                     href="http://kssse.pl/upload/pictures/Dz_U_2018_poz_1162.pdf">

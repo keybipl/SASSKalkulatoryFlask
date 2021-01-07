@@ -61,7 +61,35 @@ main
         &:nth-child(odd)
           margin-top: 20px
           font-weight: bold
+      button
+        +buttonMobile()
+        margin-top: 15px
+        margin-bottom: 25px
+        cursor: pointer
+        transition: .3s
+        &:hover
+          box-shadow: none
     div.resultsopl
+      ul
+        li
+          margin-bottom: 15px
+          line-height: 140%
+      p
+        text-align: justify
+        line-height: 140%
+        a
+          color: $link
+          text-decoration: none
+          &:hover
+            color: $buttonColor
+      p.fee
+        font-size: 30px
+        text-align: center
+        font-weight: bold
+        i
+          font-size: 30px
+          color: $buttonColor
+          margin-right: 10px
 
 @media (min-width:  1024px)
   main
@@ -72,4 +100,10 @@ main
       div.fee
         width: 30%
       div.feeDescription
+        width: 60%
+    div.roplwrap
+      +box-flex(row, space-around)
+      div.parameters
+        width: 30%
+      div.resultsopl
         width: 60%
