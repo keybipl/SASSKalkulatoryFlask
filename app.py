@@ -8,14 +8,14 @@
 #     return render_template('index.html')
 
 from flask import Flask, render_template, request, g
-from flask_bootstrap import Bootstrap
+# from flask_bootstrap import Bootstrap
 import requests
 from random import randint
 import sqlite3
 from collections import defaultdict
 
 app = Flask(__name__)
-Bootstrap(app)
+
 
 
 def connect_db():
